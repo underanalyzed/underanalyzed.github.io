@@ -1,35 +1,61 @@
-# Setup
-title:              Morning Hypertext Fragments
-description:        All Things Under Analyzed
-owner:              Ryan Johnson
-header-img:         img/home-bg.jpg
-email:              ryan@tenthirtyam.org
-baseurl:            
-url:                http://tenthirtyam.org
-paginate:           1
+# Site wide configuration
 
-# Author
-author:
-  name:             Ryan Johnson
-  url:              https://twitter.com/tenthirtyam
-  email:            ryan@tenthirtyam.org
-  github:           tenthirtyam
-  twitter:          tenthirtyam
-  linkedin:         tenthirtyam
+title:            Site Title
+locale:           en_US
+url:
 
-# Dependancies
-markdown:           kramdown
-highlighter:        pygments
 
-# Permalinks
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           /:year/:month/:day/:title/
-#relative_permalinks: true
+# Jekyll configuration
 
-# Exclude Ruby gem stuff
-exclude:            ["less","node_modules","Gruntfile.js","package.json","README.md"]
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
 
-# Gems
-#gems:
-#  - jekyll-redirect-from
-#  - jekyll-sitemap
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+
+# Site owner
+owner:
+  name: Your Name
+  avatar: bio-photo.jpg
+  bio: "Describe your self."
+  email:
+  disqus-shortname:
+  twitter: #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
