@@ -2,7 +2,7 @@
 title: Morning Hypertext
 description: Morning Hypertext and All Things Under Analyzed
 url: "http://underanalyzed.com"
-baseurl: ""
+baseurl: "http://underanalyzed.com"
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
