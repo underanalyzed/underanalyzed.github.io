@@ -1,13 +1,13 @@
 # Site settings
-title: 'Morning Hypertext'
-description: 'Morning Hypertext and All Things Under Analyzed'
-url: 'http://underanalyzed.com
-baseurl: 'thtp://underanalyzed.com'
+title: Morning Hypertext
+description: Morning Hypertext and All Things Under Analyzed
+url: "http://underanalyzed.com"
+baseurl: ""
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'Ryan Johnson'
+  name: Ryan Johnson
   email: ryan@underanalyzed.com
   twitter_username: tenthirtyam
   github_username: tenthirtyam
