@@ -1,6 +1,6 @@
 # Site settings
 title: Morning Hypertext
-description: Morning Hypertext and All Things Under Analyzed
+description: And All Things Under Analyzed
 url: "http://underanalyzed.com"
 baseurl: "http://underanalyzed.com/"
 # google_analytics: 'UA-XXXXXX-X'
@@ -8,7 +8,6 @@ baseurl: "http://underanalyzed.com/"
 
 author:
   name: Ryan Johnson
-  email: ryan@underanalyzed.com
   twitter_username: tenthirtyam
   github_username: tenthirtyam
   linkedin_username: tenthirtyam
