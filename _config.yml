@@ -23,7 +23,7 @@ defaults:
 # Build settings
 timezone: "America/NewYork"
 destination: _site
-paginate: 10
+paginate: 1
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 highlighter: rouge
