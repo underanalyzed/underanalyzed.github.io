@@ -4,7 +4,7 @@ description: And All Things Under Analyzed
 url: "http://underanalyzed.com"
 baseurl: "http://underanalyzed.com/"
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 'tenthirtyam'
 
 author:
   name: Ryan Johnson
@@ -21,17 +21,21 @@ defaults:
         layout: 'post'
 
 # Build settings
+timezone: "America/NewYork"
 destination: _site
 paginate: 10
-permalink: /:year/:title/
+permalink: /:year/:month/:day/:title/
 markdown: kramdown
 highlighter: rouge
-
 kramdown:
+  auto_ids: true
   # use Github Flavored Markdown
   input: GFM
   # do not replace newlines by <br>s
   hard_wrap: false
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
 
 gems: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
