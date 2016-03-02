@@ -47,8 +47,6 @@ One additional feature that we introduced in vCenter Server 6.0 Update 1 is an 
 
 With these new capabilities -- and, of course, <a href="http://pubs.vmware.com/Release_Notes/en/vsphere/60/vsphere-vcenter-server-60u1-release-notes.html#resolvedissues" target="_blank">resolved issues</a> -- there's been a ton of interest in how to update the VCSA to 6.0 Update 1. So, let's get started and look at the process...
 
-<!--more-->
-
 Before you begin the upgrade process, ensure you have a validated backup and snapshot of your VCSA 6.0 system.
 
 Note that if you're using an external deployment model (MxN), that is, you deployed an external Platform Services Controller node separately from your vCenter Server (VCSA) node and wish to update to 6.0 Update 1, the process is <em><strong>exactly the same for both the PSC and the VCSA</strong></em>. Simply update the Platform Services Controller to 6.0 Update 1 <em><strong>first</strong></em> since it provides authentication services to the vCenter Server. Once the PSC is updated and back online you can move onto your VCSA and update it to 6.0 Update 1.
