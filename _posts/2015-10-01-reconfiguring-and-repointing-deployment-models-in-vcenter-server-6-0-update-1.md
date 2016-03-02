@@ -9,7 +9,7 @@ categories:     [vSphere, vCenter, Platform Services Controller]
 tags:           [vSphere, vCenter, Platform Services Controller]
 ---
 
-In my last blog post, we discussed some of the new features and capabilities found in vCenter Server 6.0 such as how you can quickly and easily <a href="https://blogs.vmware.com/vsphere/2015/09/updating-vcenter-server-appliance-6-0-to-update-1.html" target="_blank">update the vCenter Server Appliance 6.0 to Update 1</a>.
+In my last blog post, we discussed some of the new features and capabilities found in vCenter Server 6.0 such as how you can quickly and easily <a href="https://blogs.vmware.com/vsphere/2015/09/updating-vcenter-server-appliance-6-0-to-update-1.html" >update the vCenter Server Appliance 6.0 to Update 1</a>.
 
 Now, it’s time to focus our attention on a two key enhancements found in vCenter Server 6.0 Update 1 - both the appliance and Windows-based form factors:
 <ul>
@@ -114,7 +114,7 @@ Success! We’ve successfully reconfigured a vCenter Server 6.0 Update 1 deploym
 
 Now, what if we wanted to repoint this vCenter Server instance to use an alternate external Platform Services Controller in the <strong><em>same site</em></strong>? For example, to quickly recover from an external platform services controller failure and/or distribute load to alternate nodes that are in the same SSO domain.
 
-While we could do this in vCenter Server 6.0 following <a href="http://kb.vmware.com/2113917" target="_blank">KB 2113917</a>, we’ve made it easier in 6.0 Update 1 with a bit of automation. The repoint namespace just wraps the service-control and vmafd-cli command into a nice little package with some validation logic – so again, it is what we are already doing in KB 2113917, but automated for you.
+While we could do this in vCenter Server 6.0 following <a href="http://kb.vmware.com/2113917" >KB 2113917</a>, we’ve made it easier in 6.0 Update 1 with a bit of automation. The repoint namespace just wraps the service-control and vmafd-cli command into a nice little package with some validation logic – so again, it is what we are already doing in KB 2113917, but automated for you.
 
 Let’s return to the BASH shell in the appliance first and see how it’s done.
 
@@ -153,7 +153,7 @@ The process I showed above was for repointing a vCenter Server to an an alterna
 
 When the vCenter Server is installed, it creates services registrations that it issues to start the vCenter Server services. These service registrations are written to a specific site of the Platform Services Controller that was used during install time. So. when you attempt to move the vCenter Server's affinity to a new Platform Services Controller in a new site, the vCenter Server will fail to start its services due to not having the proper service registrations in the new site.
 
-Refer to <a href="http://kb.vmware.com/2131191" target="_blank">KB 2131191</a> and download the <strong>cmsso-util</strong> in this article to facilitate the movement of the services registrations.
+Refer to <a href="http://kb.vmware.com/2131191" >KB 2131191</a> and download the <strong>cmsso-util</strong> in this article to facilitate the movement of the services registrations.
 
 For example, if <em>mgmt01psc02.demo.vmware.com</em> was in a different site from my original Platform Services Controller, mgmt01psc01.demo.vmware.com, I would run the following commands on the vCenter Server to move to an alternate Platform Services Controller in a new site AND move its service registrations.
 <p style="padding-left: 30px;">cmsso-util repoint --repoint-psc "mgmt01psc02.demo.vmware.com”</p>

@@ -9,7 +9,10 @@ categories:     [vSphere, vCenter, Platform Services Controller]
 tags:           [vSphere, vCenter, Platform Services Controller]
 ---
 
-Earlier this month, we released vSphere 6.0 Update 1. In this update we introduced some awesome new features for vCenter Server. Let’s take a look at some of these just below:
+Earlier this month, we released vSphere 6.0 Update 1. In this update we introduced some awesome new features for vCenter Server.
+
+Let’s take a look at some of these just below:
+
 <ul>
 	<li><strong>Installation and Upgrade using HTML 5 Installer for VCSA</strong>: The following installation and upgrade scenarios are now supported for vCenter Server Appliance using its HTML 5 installer:
 <ol>
@@ -26,7 +29,8 @@ Earlier this month, we released vSphere 6.0 Update 1. In this update we introduc
 	<li><strong>Appliance Management User Interface</strong>: An all new HTML5-based management interface for the appliance at <em><em>https://&lt;FQDN-or-IP&gt;:5480. </em></em></li>
 </ul>
 <ul>
-	<li><span style="line-height: 1.71429; font-size: 1rem;"><span style="line-height: 1.71429; font-size: 1rem;"><strong>Platform Services Controller Interface</strong>: An all new HTML5-based management interface for the Platform Services Controller at <em>https://&lt;FQDN-or-IP&gt;/psc/.  </em>See my <a href="https://blogs.vmware.com/vsphere/2015/09/introducing-the-platform-services-controller-interface-in-vcenter-server-6-0-update-1.html" target="_blank">earlier blog</a> on the Platform Services Controller Interface.</span></span></li>
+	<li><span style="line-height: 1.71429; font-size: 1rem;"><span style="line-height: 1.71429; font-size: 1rem;"><strong>Platform Services Controller Interface</strong>: An all new HTML5-based management interface for the Platform Services Controller at <em>https://&lt;FQDN-or-IP&gt;/psc/.  
+	</li>
 </ul>
 <ul>
 	<li><strong>Interoperability</strong>: Virtual SAN and SMP-FT are interoperable.</li>
@@ -45,18 +49,18 @@ Earlier this month, we released vSphere 6.0 Update 1. In this update we introduc
 </ul>
 One additional feature that we introduced in vCenter Server 6.0 Update 1 is an in-place process for Updates in a major release (<em>e.g.</em> vCenter Server 6.0 to vCenter Server 6.0 Update 1) instead of the migration-based approach that was required in prior VCSA updates (<em>e.g.</em> vCenter Server 5.5 to vCenter Server 5.5 Update 1).
 
-With these new capabilities -- and, of course, <a href="http://pubs.vmware.com/Release_Notes/en/vsphere/60/vsphere-vcenter-server-60u1-release-notes.html#resolvedissues" target="_blank">resolved issues</a> -- there's been a ton of interest in how to update the VCSA to 6.0 Update 1. So, let's get started and look at the process...
+With these new capabilities -- and, of course, <a href="http://pubs.vmware.com/Release_Notes/en/vsphere/60/vsphere-vcenter-server-60u1-release-notes.html#resolvedissues">resolved issues</a> -- there's been a ton of interest in how to update the VCSA to 6.0 Update 1. So, let's get started and look at the process...
 
 Before you begin the upgrade process, ensure you have a validated backup and snapshot of your VCSA 6.0 system.
 
 Note that if you're using an external deployment model (MxN), that is, you deployed an external Platform Services Controller node separately from your vCenter Server (VCSA) node and wish to update to 6.0 Update 1, the process is <em><strong>exactly the same for both the PSC and the VCSA</strong></em>. Simply update the Platform Services Controller to 6.0 Update 1 <em><strong>first</strong></em> since it provides authentication services to the vCenter Server. Once the PSC is updated and back online you can move onto your VCSA and update it to 6.0 Update 1.
 <p style="padding-left: 30px;"><a href="http://blogs.vmware.com/vsphere/files/2015/09/0-PSC-FIRST.png"><img class="alignnone size-full wp-image-18191" src="http://blogs.vmware.com/vsphere/files/2015/09/0-PSC-FIRST.png" alt="If Applicable, Start with External Platform Services Controller" width="857" height="542" /></a></p>
-<p style="padding-left: 30px;"><em>​Review <a href="http://kb.vmware.com/kb/2109760" target="_blank">KB 2109760 </a>for proper update and upgrade sequencing.</em></p>
+<p style="padding-left: 30px;"><em>​Review <a href="http://kb.vmware.com/kb/2109760" >KB 2109760 </a>for proper update and upgrade sequencing.</em></p>
 Now, let's step through the process to update the VCSA 6.0 (or an external PSC 6.0) to Update 1.
 
-<strong>Step 1</strong> - Visit the <a href="https://my.vmware.com/group/vmware/patch" target="_blank">VMware Product Patches</a> section on My VMware and download the VCSA 6.0 Update 1 Full Patch<em> (VC-6.0.0U1-Appliance &gt;<b> </b>VMware-vCenter-Server-Appliance-6.0.0.10000-3018521-patch-FP.iso)​</em>.
+<strong>Step 1</strong> - Visit the <a href="https://my.vmware.com/group/vmware/patch" >VMware Product Patches</a> section on My VMware and download the VCSA 6.0 Update 1 Full Patch<em> (VC-6.0.0U1-Appliance &gt;<b> </b>VMware-vCenter-Server-Appliance-6.0.0.10000-3018521-patch-FP.iso)​</em>.
 <p style="padding-left: 30px;"><img class="alignnone size-full wp-image-18193" src="http://blogs.vmware.com/vsphere/files/2015/09/1-Download-VCSA-6-U1-FP.png" alt="Download vCenter Server Appliance 6.0 Update 1 Full Patch" width="997" height="485" /></p>
-<strong>Step 2</strong> - Mount the VCSA 6.0 Update 1 Patch ISO to your VCSA 6.0 appliance using the vSphere Web Client or even the <a href="https://labs.vmware.com/flings/esxi-embedded-host-client" target="_blank">ESXi Embedded Host Client</a> fling. Or if you rather, simply execute a quick PowerCLI script to mount the ISO
+<strong>Step 2</strong> - Mount the VCSA 6.0 Update 1 Patch ISO to your VCSA 6.0 appliance using the vSphere Web Client or even the <a href="https://labs.vmware.com/flings/esxi-embedded-host-client" >ESXi Embedded Host Client</a> fling. Or if you rather, simply execute a quick PowerCLI script to mount the ISO
 <p style="padding-left: 30px;">PowerCLI Example:</p>
 <p style="padding-left: 30px;">$iso = “[mgt-ds-nfs] iso/VMware-vCenter-Server-Appliance-6.0.0.10000-3018521-patch-FP.iso”</p>
 <p style="padding-left: 30px;">Get-CDDrive –vm “mgmt01vc01” | Set-CDDrive -IsoPath $iso –Connected $true</p>
@@ -89,15 +93,15 @@ tail software-packaged.log –n 25</p>
 <p style="padding-left: 30px;"><a href="http://blogs.vmware.com/vsphere/files/2015/09/7-Reboot-Reason.png"><img class="alignnone size-full wp-image-18186" src="http://blogs.vmware.com/vsphere/files/2015/09/7-Reboot-Reason.png" alt="Post-Update Reboot" width="857" height="543" /></a></p>
 <strong>Step 7</strong> - Provide some time for the VCSA to reboot and start its services. You can verify that the upgrade to vCenter Server Update 1 was successful by opening a browser and connecting to the new HTML5-based Appliance Management UI (Appliance MUI) at https://&lt;FQDN-or-IP&gt;:5480.
 <p style="padding-left: 30px;"><a href="http://blogs.vmware.com/vsphere/files/2015/09/9-AMUI.png"><img class="alignnone size-large wp-image-18182" src="http://blogs.vmware.com/vsphere/files/2015/09/9-AMUI-1024x576.png" alt="vCenter Server 6.0 Update 1 Appliance Management User Interface" width="625" height="352" /></a></p>
-<p style="padding-left: 30px;"><em>Check out <a href="https://blogs.vmware.com/vsphere/2015/09/web-based-management-for-the-vcsa-is-back.html" target="_blank">Matthew Meyer's post on the all new Appliance MUI</a>, too!</em></p>
+<p style="padding-left: 30px;"><em>Check out <a href="https://blogs.vmware.com/vsphere/2015/09/web-based-management-for-the-vcsa-is-back.html" >Matthew Meyer's post on the all new Appliance MUI</a>, too!</em></p>
 Once you've updated to vSphere 6.0 Update 1, you'll notice in the Appliance MUI that we've re-introduced patching capabilities. For future updates, you'll no longer need to update from the applaincesh. Instead you can use the HTML5-based UI to patch from an ISO or even better URL-based patching directly from the default VMware repository or your own repository.
 <p style="padding-left: 30px;"><a href="http://blogs.vmware.com/vsphere/files/2015/09/8-Version-Check-Update.png"><img class="alignnone size-large wp-image-18184" src="http://blogs.vmware.com/vsphere/files/2015/09/8-Version-Check-Update-1024x576.png" alt="Check for Updates in Appliance MUI" width="625" height="352" /></a></p>
 And there you have it, that's the process the update your VMware vCenter Server Appliance 6.0 to Update 1 to gain all the new feature and capabilities in this release.
 
 <strong>Related Documentation:</strong>
 <ul>
-	<li><a href="http://kb.vmware.com/kb/2119924" target="_blank">Update for VMware vCenter Server Appliance 6.0 Update 1</a> (2119924)</li>
-	<li><a href="http://pubs.vmware.com/vsphere-60/index.jsp?topic=%2Fcom.vmware.vsphere.upgrade.doc%2FGUID-6751066A-5D4E-47AC-A6A4-5E90AEC63DAA.html" target="_blank">Patching the vCenter Server Appliance</a></li>
-	<li><a href="http://pubs.vmware.com/vsphere-60/topic/com.vmware.vsphere.upgrade.doc/GUID-8466F019-C57C-4344-9E15-8CFF74A6E4C2.html" target="_blank">Stage Patches to vCenter Server Appliance</a></li>
-	<li><a href="http://pubs.vmware.com/vsphere-60/index.jsp?topic=%2Fcom.vmware.vsphere.upgrade.doc%2FGUID-5FCA78EC-8637-43A4-8B28-24624E4D5EBA.html&amp;resultof=%22patch%22%20%22vCenter%22%20%22vcenter%22%20%22Server%22%20%22server%22%20%22Appliance%22%20%22applianc%22%20%E2%80%8B" target="_blank">Install vCenter Server Appliance Patches</a></li>
+	<li><a href="http://kb.vmware.com/kb/2119924" >Update for VMware vCenter Server Appliance 6.0 Update 1</a> (2119924)</li>
+	<li><a href="http://pubs.vmware.com/vsphere-60/index.jsp?topic=%2Fcom.vmware.vsphere.upgrade.doc%2FGUID-6751066A-5D4E-47AC-A6A4-5E90AEC63DAA.html" >Patching the vCenter Server Appliance</a></li>
+	<li><a href="http://pubs.vmware.com/vsphere-60/topic/com.vmware.vsphere.upgrade.doc/GUID-8466F019-C57C-4344-9E15-8CFF74A6E4C2.html" >Stage Patches to vCenter Server Appliance</a></li>
+	<li><a href="http://pubs.vmware.com/vsphere-60/index.jsp?topic=%2Fcom.vmware.vsphere.upgrade.doc%2FGUID-5FCA78EC-8637-43A4-8B28-24624E4D5EBA.html&amp;resultof=%22patch%22%20%22vCenter%22%20%22vcenter%22%20%22Server%22%20%22server%22%20%22Appliance%22%20%22applianc%22%20%E2%80%8B" >Install vCenter Server Appliance Patches</a></li>
 </ul>

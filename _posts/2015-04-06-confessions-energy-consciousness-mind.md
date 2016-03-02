@@ -9,17 +9,17 @@ categories:     [vSphere]
 tags:           [vSphere,]
 ---
 
-<span style="line-height: 1.714285714; font-size: 1rem;">I have a confession. </span>
+]I have a confession. 
 
-<span style="font-size: 1rem; line-height: 1.714285714;">My data center kit has been using too much energy.</span>
+My data center kit has been using too much energy.
 
-<span style="line-height: 1.714285714; font-size: 1rem;">Having kit available at my disposable is great, but I have been wasting this resource when it's not required by my workloads. And if there's one thing I try to be conscious of, it's energy consumption. Just ask my kids who I chase from room to room turning off lights, screens, and the lot when they aren't using them.</span>
+<span style="line-height: 1.714285714; font-size: 1rem;">Having kit available at my disposable is great, but I have been wasting this resource when it's not required by my workloads. And if there's one thing I try to be conscious of, it's energy consumption. Just ask my kids who I chase from room to room turning off lights, screens, and the lot when they aren't using them.
 
 But why not in the data center? Did you know that hosts typically use 60%+ of their peak power when idle?
 
 Until recently, I had overlooked configuring my kit to use the vSphere Distributed Power Management ("DPM") feature to manage power consumption and save energy.
 
-<span style="font-size: 1rem; line-height: 1.714285714;">With the release of vSphere 6.0 it's a good time to review and take deeper look into the capabilities and benefits of this feature.</span>
+With the release of vSphere 6.0 it's a good time to review and take deeper look into the capabilities and benefits of this feature.
 <h2>What is VMware vSphere Distributed Power Management?</h2>
 VMware vSphere Distributed Power Management is a feature included with vSphere Enterprise and Enterprise Plus editions that dynamically optimizes cluster power consumption based on workload demands. When host CPU and memory resources are lightly used, DPM recommends the evacuation of workloads and powers-off of ESXi hosts. When CPU or memory resource utilization increases for workloads or additional host resources are required, DPM powers on a required set of hosts back online to meet the demand of HA or other workload-specific contraints by executing vSphere Distributed Resource Scheduler ("DRS") in a "what-if" mode. DRS will ensure host power recommendations are consistent with the cluster constraints and resources being managed by the cluster.
 
@@ -47,8 +47,6 @@ DPM can awaken hosts from the standby mode using one of three power management o
 </ol>
 Each protocol requires its own hardware support and configuration. If a host does not support any of these protocols it cannot be put into standby by DPM. If a host supports multiple protocols, they are used in the following order: IPMI, iLO, WOL. This article is focused on the use of the first two.
 
-<!--more-->
-
 IPMI is a hardware-level specification and Hewlett-Packard iLO is an embedded server management technology. Each of them describes and provides an interface for remotely monitoring and controlling computers. Both require a hardware Baseboard Management Controller ("BMC") to provide a gateway for accessing hardware control functions, and allow the interface to be accessed from a remote system using serial or LAN connections. The BMC is powered-on even when the host itself is powered-off. And, if properly enabled, the BMC can respond to remote power-on commands.
 
 To use IPMI or iLO and with vSphere Distributed Power Management, you must properly configure the host BMC. These steps may vary according to vendor and model. Now, with IPMI, you must also ensure that the BMC LAN channel is configured to be always available and to allow operator-privileged commands. Keep in mind that some system IPMI require that enabling "IPMI over LAN" in the BIOS and the specification an IPMI account.
@@ -72,8 +70,8 @@ Now, let's configure all the hosts in the Management Cluster for Power Managemen
 	<li>IP Address of the BMC <em><em>(Obtained in this instance from the HP iLO4 seen above.)</em></em></li>
 	<li>MAC Address of the BMC. <em>(Obtained in this instance from the HP iLO4 seen above.)</em></li>
 </ul>
-<p style="padding-left: 30px;"><span style="font-size: 1rem; line-height: 1.714285714;"><a href="http://blogs.vmware.com/vsphere/files/2015/04/DPM-BMC.jpg"><img class="alignnone  wp-image-16984" alt="" src="http://blogs.vmware.com/vsphere/files/2015/04/DPM-BMC-1024x576.jpg" width="813" height="456" /></a></span></p>
-<span style="line-height: 1.714285714; font-size: 1rem;">Before enabling DPM on the cluster, it's a good idea to validate that vCenter Server can communicate with each host's BMC by individually testing placing it in standby mode and then powering-on the host through the vSphere Web Client.</span>
+<p style="padding-left: 30px;"><a href="http://blogs.vmware.com/vsphere/files/2015/04/DPM-BMC.jpg"><img class="alignnone  wp-image-16984" alt="" src="http://blogs.vmware.com/vsphere/files/2015/04/DPM-BMC-1024x576.jpg" width="813" height="456" /></a></p>
+<span style="line-height: 1.714285714; font-size: 1rem;">Before enabling DPM on the cluster, it's a good idea to validate that vCenter Server can communicate with each host's BMC by individually testing placing it in standby mode and then powering-on the host through the vSphere Web Client.
 <ol>
 	<li>Test placing host in standby mode by right-clicking the host in the vSphere Web Client. The select <strong>Power </strong>&gt; <strong>Enter Standby Mode </strong>to initiate standby.
 <p style="padding-left: 30px;"><a href="http://blogs.vmware.com/vsphere/files/2015/04/DPM-ENTERSTANDBY.jpg"><img class="alignnone size-full wp-image-17001" alt="" src="http://blogs.vmware.com/vsphere/files/2015/04/DPM-ENTERSTANDBY.jpg" width="824" height="246" />
@@ -92,7 +90,7 @@ As mentioned previously, DPM leverages DRS when to migrates virtual machines awa
 <ol>
 	<li>In the vSphere Web Client highlight the cluster and select the <strong>Manage </strong>tab.<strong> </strong>Click the <strong>Settings</strong> tab.</li>
 	<li>Highlight the <strong>vSphere DRS</strong> settings to configure the <strong>Power Management</strong>. DPM is disabled - set to [Off] - by default.<img class="alignnone  wp-image-16987" alt="" src="http://blogs.vmware.com/vsphere/files/2015/04/DPM-DRS-1024x576.jpg" width="813" height="456" /></li>
-	<li>Enable DPM by clicking <strong>Edit</strong> and selecting either [Manual] or [Automatic]. <span style="line-height: 1.714285714; font-size: 1rem;"><span style="line-height: 1.714285714; font-size: 1rem;"><span style="line-height: 1.714285714; font-size: 1rem;"><span style="line-height: 1.714285714; font-size: 1rem;">In [Manual] mode, execution of DPM recommendations requires administrative intervention while [Automatic] mode, executes DPM recommendations without administrative intervention.</span></span></span></span><img class="alignnone  wp-image-16988" style="font-size: 1rem; line-height: 1;" alt="" src="http://blogs.vmware.com/vsphere/files/2015/04/DPM-DRS2-1024x576.jpg" width="813" height="456" /></li>
+	<li>Enable DPM by clicking <strong>Edit</strong> and selecting either [Manual] or [Automatic]. <span style="line-height: 1.714285714; font-size: 1rem;"><span style="line-height: 1.714285714; font-size: 1rem;"><span style="line-height: 1.714285714; font-size: 1rem;"><span style="line-height: 1.714285714; font-size: 1rem;">In [Manual] mode, execution of DPM recommendations requires administrative intervention while [Automatic] mode, executes DPM recommendations without administrative intervention.<img class="alignnone  wp-image-16988" style="font-size: 1rem; line-height: 1;" alt="" src="http://blogs.vmware.com/vsphere/files/2015/04/DPM-DRS2-1024x576.jpg" width="813" height="456" /></li>
 </ol>
 vSphere Distributed Power Management is now enabled, but can also adjust the DPM Threshold to suit our requirements.
 <h2>DPM Threshold and Recommendation Rankings</h2>

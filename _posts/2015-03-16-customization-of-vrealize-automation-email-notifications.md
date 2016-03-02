@@ -37,11 +37,11 @@ Messages can be easily and beautifully customized using a simple, powerful temp
 
 <!--more-->
 <h2><b>Getting Started with Message Templates</b></h2>
-vRealize Automation uses a folder structure to determine the appropriate template to user based on the context of the tenant. Templates files are written in Apache Velocity, an easy to use Java-based template engine. Learn more about the simple directives used in the .vm template files in the <a href="http://velocity.apache.org/engine/devel/user-guide.html#Directives" target="_blank">Apache Velocity User Guide</a>.
+vRealize Automation uses a folder structure to determine the appropriate template to user based on the context of the tenant. Templates files are written in Apache Velocity, an easy to use Java-based template engine. Learn more about the simple directives used in the .vm template files in the <a href="http://velocity.apache.org/engine/devel/user-guide.html#Directives" >Apache Velocity User Guide</a>.
 <h3><b>Deploy the Sample Templates</b></h3>
 To use message templates in vRealize Automation, you must first obtain the sample templates, customize those templates that you need, and save the templates in the file system of your vRealize Automation appliance(s).
 
-These templates are provided in VMware <a href="http://kb.vmware.com/kb/2088805" target="_blank">KB 2088805</a>. Download and copy the vrealize_automation.tar.gz to root "/" the vRealize Automation appliance file system.
+These templates are provided in VMware <a href="http://kb.vmware.com/kb/2088805" >KB 2088805</a>. Download and copy the vrealize_automation.tar.gz to root "/" the vRealize Automation appliance file system.
 <ul>
 	<li>From Windows, SCP the file to the vRealize Automation appliance with a utility like WinSCP.</li>
 </ul>
@@ -181,7 +181,7 @@ To customize a template file for a specific scenario, create a file named in the
 <pre> &lt;template.vm&gt;-&lt;scenarioId&gt;</pre>
 To create a separate main.vm for the above Resource Activated scenario, create a template file with this name:
 <pre> main.vm-csp.catalog.notifications.resource.activated</pre>
-A list of scenarios can be found in <a href="http://kb.vmware.com/kb/208805" target="_blank">KB 2088805​ </a>or in <b>Administration</b> &gt; <b>Notifications</b> <b>&gt; Scenarios</b> when logged into vRealize Automation as a Tenant Administrator.
+A list of scenarios can be found in <a href="http://kb.vmware.com/kb/208805" >KB 2088805​ </a>or in <b>Administration</b> &gt; <b>Notifications</b> <b>&gt; Scenarios</b> when logged into vRealize Automation as a Tenant Administrator.
 <h3><b>Add Custom Properties</b></h3>
 Only available in vRealize Automation 6.2 and later, custom properties that are part of the request form can be added in the email template in this format:
 <pre>$formData.get("provider-&lt;CustomPropertyName&gt;”)</pre>
@@ -212,7 +212,7 @@ Template:                   Custom Design
 Subject:                      Custom Subject</address>
 <h3> Let's get started....</h3>
 <ol>
-	<li>Obtain the sample templates from <a href="http://kb.vmware.com/kb/2088805" target="_blank">KB 2088805</a> ​.</li>
+	<li>Obtain the sample templates from <a href="http://kb.vmware.com/kb/2088805" >KB 2088805</a> ​.</li>
 	<li>Open a terminal and run the following commands.
 <pre>scp vcac.tar.gz root@&lt;vRA-VA-FQDN&gt;:/</pre>
 </li>
