@@ -4,7 +4,7 @@ title:          "What is vCenter Server Watchdog?"
 subtitle:       ""
 date:           2015-10-29 10:30:00
 author:         "Ryan Johnson"
-published:      false
+published:      true
 categories:     [vSphere, vCenter, Platform Services Controller]
 tags:           []
 ---
