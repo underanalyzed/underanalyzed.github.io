@@ -1,13 +1,17 @@
 # Site settings
-title: VMware Validated Designs
-description: 'IT Automation Cloud 1.0'
-url: 'http://underanalyzed.com/vvd/'
-baseurl: '/vvd/'
+title: Morning Hypertext
+description: 'Morning Hypertext and All Things Under Analyzed'
+url: 'http://underanalyzed.com
+baseurl: 'ttp://underanalyzed.com'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'VMware'
-  email: sddc-tm@vmware.com
-  twitter_username: vmwaresddc
+  name: 'Ryan Johnson'
+  email: ryan@underanalyzed.com
+  twitter_username: tenthirtyam
+  github_username: tenthirtyam
+  linkedin_username: tenthirtyam
 
 defaults:
   -
