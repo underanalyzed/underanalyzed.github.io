@@ -2,7 +2,7 @@
 layout:         post
 title:          "What is vCenter Server Watchdog?"
 subtitle:       ""
-date:           2015-010-29 10:30:00
+date:           2015-10-29 10:30:00
 author:         "Ryan Johnson"
 published:      false
 categories:     [vSphere, vCenter, Platform Services Controller]
