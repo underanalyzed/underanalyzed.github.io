@@ -1204,10 +1204,9 @@ hr {
 	font-family: "Open Sans Condensed", serif;
 	font-size: 22px;
 	line-height: 28px;
-	font-weight: light;
+	font-weight: bold;
 	letter-spacing: 3px;
-	color: #cccccc;
-	-webkit-font-smoothing: antialiased; }
+	color: #cccccc; }
 
 .panel-cover {
 	display: block;
@@ -1325,7 +1324,8 @@ hr {
 	padding: 10px 20px;
 	border: 1px solid #e25440;
 	border-radius: 20px;
-	font-size: .9em;
+	font-size: 16px;
+	line-height: 32px;
 	font-weight: bold;
 	letter-spacing: 1px;
 	text-shadow: none;
