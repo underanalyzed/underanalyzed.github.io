@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Lora:400|Open+Sans+Condensed:700)';
+@import 'http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700")';
 /* http://meyerweb.com/eric/tools/css/reset/
 	 v2.0 | 20110126
 	 License: none (public domain)
@@ -925,7 +925,7 @@ html {
 	max-height: 100%; }
 
 body {
-	font-family: Lora, sans-serif;
+	font-family: Cantarell, sans-serif;
 	font-size: 16px;
 	line-height: 32px;
 	color: #666666; }
@@ -954,7 +954,7 @@ h5,
 h5 {
 	margin-top: .8em;
 	margin-bottom: .4em;
-	font-family: "Open Sans Condensed", serif;
+	font-family: "Fjalla One", serif;
 	font-weight: bold;;
 	color: #333333;
 	-webkit-font-smoothing: antialiased; }
@@ -996,7 +996,7 @@ blockquote {
 	background: #f8f8f8;
 	border: 1px solid #eeeeee;
 	border-radius: 3px;
-	font-family: "Lora", serif;
+	font-family: "Cantarell", serif;
 	font-style: italic;
 	font-size: 16px;
 	line-height: 32px;
@@ -1064,7 +1064,7 @@ pre {
 	color: #999999; }
 
 .intro {
-	font-family: "Open Sans Condensed", serif;
+	font-family: "Fjalla One", serif;
 	font-size: 22px;
 	line-height: 28px;
 	font-weight: lighter;
@@ -1192,7 +1192,7 @@ hr {
 	vertical-align: middle; }
 
 .panel-title {
-	font-family: "Open Sans Condensed", serif;
+	font-family: "Fjalla One", serif;
 	font-weight:bold;
 	margin: 0 0 5px 0;
 	font-size: 64px;
@@ -1201,7 +1201,7 @@ hr {
 	color: #FFF; }
 
 .panel-subtitle {
-	font-family: "Open Sans Condensed", serif;
+	font-family: "Fjalla One", serif;
 	font-size: 22px;
 	line-height: 28px;
 	font-weight: bold;
