@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Oswald:400,700|Muli:400,700|Open+Sans+Condensed:700)';
+@import 'https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans+Condensed:700)';
 /* http://meyerweb.com/eric/tools/css/reset/
 	 v2.0 | 20110126
 	 License: none (public domain)
@@ -925,8 +925,8 @@ html {
 	max-height: 100%; }
 
 body {
-	font-family: Muli, sans-serif;
-	font-size: 1em;
+	font-family: Lora, sans-serif;
+	font-size: 1.2em;
 	color: #666666; }
 
 ::selection {
@@ -953,8 +953,8 @@ h5,
 h5 {
 	margin-top: .8em;
 	margin-bottom: .4em;
-	font-family: "Oswald", serif;
-	font-weight: lighter;
+	font-family: "Open Sans Condensed", serif;
+	font-weight: bold;;
 	color: #333333;
 	-webkit-font-smoothing: antialiased; }
 
@@ -995,8 +995,7 @@ blockquote {
 	background: #f8f8f8;
 	border: 1px solid #eeeeee;
 	border-radius: 3px;
-	font-family: "Oswald", serif;
-	font-weight: lighter;
+	font-family: "Lora", serif;
 	font-style: italic;
 	font-size: 1.3em;
 	text-align: center; }
@@ -1063,7 +1062,7 @@ pre {
 	color: #999999; }
 
 .intro {
-	font-family: "Oswald", serif;
+	font-family: "Open Sans Condensed", serif;
 	font-size: 1.2em;
 	font-weight: lighter;
 	color: #999999; }
