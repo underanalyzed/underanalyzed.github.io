@@ -1287,10 +1287,10 @@ hr {
 		color: #FFF; }
 
 .cover-navigation {
-	margin-top: 10px; }
+	margin-top: 0px; }
 
 .cover-navigation--social {
-	margin-left: 10px; }
+	margin-left: 0px; }
 
 .cover-green {
 	background-color: rgba(21, 111, 120, 0.6);
@@ -1658,7 +1658,7 @@ input[type="tel"] {
 				width: 80%;
 				margin-bottom: .4em; }
 		.cover-navigation.navigation--social {
-			padding-top: 5px; }
+			padding-top: 0px; }
 			.cover-navigation.navigation--social .navigation li {
 				display: inline-block;
 				width: 25.8%; }
