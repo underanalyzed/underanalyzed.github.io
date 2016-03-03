@@ -5,6 +5,12 @@
   <body>
     {% include header.html %}
 
+    <div id="search-container">
+      <form method="get" action="/search" data-search-form>
+        <input type="search" name="q" id="q" placeholder="What are you looking for?" data-search-input />
+      </form>
+    </div>
+
     <div class="content-wrapper">
       <div class="content-wrapper__inner">
         {{ content }}
